@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "../styles/theme.sass";
+import "@fortawesome/fontawesome-free/css/all.css";
+import { AnimateSharedLayout } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AnimateSharedLayout>
+      <Component {...pageProps} />
+    </AnimateSharedLayout>
+  );
 }
 
-export default MyApp
+export default MyApp;
