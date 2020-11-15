@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import StyledLink from "../components/StyledLink";
 
 function FeatureItem({ title, subtitle, icon, isLeftAligned, color }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        delay: 0.3,
-      }}
+    <div
       className={`${
         isLeftAligned ? "has-text-left-desktop" : "has-text-right-desktop"
       } mb-6`}
@@ -20,7 +14,7 @@ function FeatureItem({ title, subtitle, icon, isLeftAligned, color }) {
       </div>
       <h3 className="title has-text-weight-bold is-spaced is-5">{title}</h3>
       <p className="subtitle is-6 has-text-grey">{subtitle}</p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -30,12 +24,9 @@ export default function Features() {
       <div className="container">
         <div className="columns is-vcentered is-variable is-desktop">
           <div className="column is-8 is-offset-2">
-            <motion.h1
-              className="title has-text-weight-bold is-1 is-size-2-mobile is-spaced"
-              layoutId="title"
-            >
+            <h1 className="title has-text-weight-bold is-1 is-size-2-mobile is-spaced">
               The only Todo App you'll ever need
-            </motion.h1>
+            </h1>
           </div>
         </div>
         <div className="columns is-vcentered is-variable is-4 is-desktop mt-6">
@@ -62,14 +53,14 @@ export default function Features() {
           </div>
           <div className="column is-1" />
           <div className="column">
-            <motion.figure className="image" layoutId="image">
+            <figure className="image">
               <Image
                 src="/assets/task.png"
                 layout="responsive"
                 width={780}
                 height={501}
               />
-            </motion.figure>
+            </figure>
           </div>
           <div className="column is-1" />
           <div className="column is-12 is-2-desktop">
@@ -97,16 +88,11 @@ export default function Features() {
             </div>
           </div>
         </div>
-        <motion.div
-          className="is-spaced has-text-centered"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
+        <div className="is-spaced has-text-centered">
           <Link href="/" passHref>
             <StyledLink>To done it</StyledLink>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
