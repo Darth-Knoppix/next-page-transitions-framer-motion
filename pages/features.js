@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import StyledLink from "../components/StyledLink";
@@ -63,12 +62,7 @@ export default function Features() {
           <div className="column is-1" />
           <div className="column">
             <motion.figure className="image" layoutId="image">
-              <Image
-                src="/assets/task.png"
-                layout="responsive"
-                width={780}
-                height={501}
-              />
+              <img src="/assets/task.png" width={780} height={501} />
             </motion.figure>
           </div>
           <div className="column is-1" />
